@@ -13,29 +13,29 @@ const MyOrders = () => {
       { blogs && <BlogList blogs={blogs} /> } */}
       <h1 className={"text-sky-400 text-6xl  underline pb-3"}>All Orders</h1>
       <h5 className={"text-gray-400 text-1xl"}>(only visible If logged in as Admin)</h5>
-      <table class="table-auto">
+      <table className="table-auto">
   <thead>
     <tr>
-      <th class="px-4 py-2">Title</th>
-      <th class="px-4 py-2">Author</th>
-      <th class="px-4 py-2">Views</th>
+      <th className="px-4 py-2">Title</th>
+      <th className="px-4 py-2">Author</th>
+      <th className="px-4 py-2">Views</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td class="border px-4 py-2">Intro to CSS</td>
-      <td class="border px-4 py-2">Adam</td>
-      <td class="border px-4 py-2">858</td>
+      <td className="border px-4 py-2">Intro to CSS</td>
+      <td className="border px-4 py-2">Adam</td>
+      <td className="border px-4 py-2">858</td>
     </tr>
-    <tr class="bg-gray-100">
-      <td class="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-      <td class="border px-4 py-2">Adam</td>
-      <td class="border px-4 py-2">112</td>
+    <tr className="bg-gray-100">
+      <td className="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
+      <td className="border px-4 py-2">Adam</td>
+      <td className="border px-4 py-2">112</td>
     </tr>
     <tr>
-      <td class="border px-4 py-2">Intro to JavaScript</td>
-      <td class="border px-4 py-2">Chris</td>
-      <td class="border px-4 py-2">1,280</td>
+      <td className="border px-4 py-2">Intro to JavaScript</td>
+      <td className="border px-4 py-2">Chris</td>
+      <td className="border px-4 py-2">1,280</td>
     </tr>
   </tbody>
 </table>

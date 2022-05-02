@@ -17,32 +17,32 @@ const Navbar = () => {
     return (
         <div className='pt-5 pl-5'>
             
-            <div class="flex bg-gray-200">
+            <div className="flex bg-gray-200">
 
-                <div class="flex-1 text-gray-700 text-center   py-2 m-2">
-                    <a href='/' className='rounded-lg px-3 py-2 text-slate-700 font-medium  bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Home Page</a>
+                <div className="flex-1 text-gray-700 text-center   py-2 m-2">
+                    {/* <a href='/' className='rounded-lg px-3 py-2 text-slate-700 font-medium  bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Home Page</a> */}
                 </div>
-                <div class="contents">
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/my-orders' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>My Orders</a>
+                <div className="contents">
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/my-orders' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>My Orders</a> */}
                     </div>
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/create-order' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Create Orders</a>
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/create-order' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Create Orders</a> */}
                     </div>
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/all-orders' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>All Orders</a>
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/all-orders' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>All Orders</a> */}
                     </div>
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/admin' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Admin</a>
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/admin' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Admin</a> */}
                     </div>
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/login' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Login</a>
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/login' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Login</a> */}
                     </div>
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Logout</a>
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Logout</a> */}
                     </div>
-                    <div class="flex-1 text-gray-700 text-center py-2 m-2">
-                        <a href='/signup' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Signup</a>
+                    <div className="flex-1 text-gray-700 text-center py-2 m-2">
+                        {/* <a href='/signup' className='rounded-lg px-3 py-2 text-slate-700 font-medium bg-slate-300 hover:bg-slate-500 hover:text-slate-900'>Signup</a> */}
                     </div>
                 </div>
 
