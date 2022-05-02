@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 
 const Login = () => {
 //   const { error, isPending, data: blogs } = useFetch('http://localhost:8000/blogs')
-
   return (
     <div className="create-order justify-center content-center pl-6 flex flex-row min-h-screen justify-center items-center">
       <div className="w-full max-w-xs">
