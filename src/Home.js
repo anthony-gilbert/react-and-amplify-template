@@ -15,22 +15,21 @@ const Home = () => {
     setOrders(newOrders)
   }
 
-
-  useEffect(() => {
+  useEffect((orders) => {
     console.log('use effect ran');
     console.log(orders);
   }, [product])
 
-    return (
-        <div clasname="home">
-          <h1 className="">Home Page </h1>
-          <BlogList orders={orders} title="All Orders" handleDelete={handleDelete}/>
-          <hr />
-          {/* <BlogList orders={orders.filter((order)=> order.customerId == 2)} title="My Orders"/> */}
-          <button onClick={() => setProduct('idk')}>change name</button>
-          <p>{product}</p>
-        </div>   
-     );
+  return (
+      <div clasname="home">
+        <h1 className="">Home Page </h1>
+        <BlogList orders={orders} title="All Orders" handleDelete={handleDelete}/>
+        <hr />
+        {/* <BlogList orders={orders.filter((order)=> order.customerId == 2)} title="My Orders"/> */}
+        <button onClick={() => setProduct('idk')}>change name</button>
+        <p>{product}</p>
+      </div>   
+    );
   }
    
   export default Home;
