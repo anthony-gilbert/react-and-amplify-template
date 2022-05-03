@@ -43,3 +43,11 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+## Some Amplify commands
+```bash
+amplify status # will show your your current config
+amplify add <category> #will allow you to add features like user login or a backend API
+amplify push # will build your local backend resources and provision it in the cloud
+amplify console #will open the Amplify Console and view your project status
+amplify publish #will build all your local backend and frontend resources
+```
