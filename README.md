@@ -8,6 +8,7 @@
     - [x] Push API to AWS
 - [x] Remove Next.js so It's just React.js
 - [ ] Create App with React.js
+    - [ ] Create a Navbar
 	- [ ] Create a form for adding data(like adding a product/order)
     - [ ] Create a landing page
     - [ ] Create an Admin page
