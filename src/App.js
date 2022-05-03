@@ -1,32 +1,38 @@
-// import { useState, useEffect } from 'react'
-// import { API } from 'aws-amplify'
-// import { listOrders } from '../src/graphql/queries'
-// import Footer from './components/Footer';
-// import HomePage from './HomePage'
-import Navbar from './components/Navbar'
-import Home from './Home'
-import CreateOrder from './CreateOrder'
-import { BrowserRouter  as Router, Route, Switch} from 'react-router-dom';
+import React from "react";
+import { Switch, Route, Redirect, useEffect } from "react-router";
+import Home from "./Home";
+import Nav from "./components/Nav";
+import Admin from './Admin'
+// import A from './Admin'
+
+// import "./styles.css";
+
 
 export default function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <div className="content">
-            <Home />
-          {/* <Switch>
-            <Route exact path="/">
-                <HomePage />
-            </Route>
-            <Route exact path="/create-order">
-                <CreateOrder />
-            </Route>
-          </Switch> */}
-          
-          {/* <Footer /> */}
-        </div>
-      </div>
-    </Router>
+    <div className="App">
+      <Nav />
+      <Switch>
+          <Route 
+            exact 
+            path="/" 
+            component={Home} 
+          />
+
+          <Route
+            exact
+            path="/admin"
+            render={() => {
+              return <Admin />;
+            }}
+          />
+
+
+
+
+
+        <Redirect to="/" />
+      </Switch>
+    </div>
   );
 }

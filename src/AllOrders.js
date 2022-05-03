@@ -11,7 +11,7 @@ const MyOrders = () => {
       
       { isPending && <div>Loading...</div> }
       { blogs && <BlogList blogs={blogs} /> } */}
-      <h1 className={"text-sky-400 text-6xl  underline pb-3"}>All Orders</h1>
+      <h1 className="text-1xl font-bold underline">All Orders</h1>
       <h5 className={"text-gray-400 text-1xl"}>(only visible If logged in as Admin)</h5>
       <table className="table-auto">
   <thead>
