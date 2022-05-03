@@ -1,4 +1,3 @@
-// // import Link from 'next/link
 // import React from 'react'
 // // import '../configureAmplify'
 // // import { useState, useEffect} from 'react'
@@ -12,7 +11,7 @@
 // import { BrowserRouter  as Router, Route, Switch, NavLink, Link, withRouter} from 'react-router-dom';
 
 // const Navbar = () => {
-//     // const [ signedUser, setSignedUser] = useState(false)
+
 
 //     return (
 //         <div className='pt-5 pl-5'>
@@ -179,13 +178,51 @@
 //     </div>
 //   );
 // };
+
+// import "../../configureAmplify"
 import { NavLink, Link, withRouter } from "react-router-dom";
-// export default Navbar;
+import { Auth, Hub } from "aws-amplify"
+
 const Navbar = () => {
+  // Here we will manage the signed-in user State
+  // const [ signedInUser, setSignedInUser] = useState(false)
+
+  async function aythListener() {
+    Hub.listen("auth", (data) => {
+      switch (data.payload.event) {
+        case "signedIn":
+          return setSignedInUser(true)
+        case "signedOut":
+          return setSignedInUser(false)
+      }
+    })
+    try {
+      await Auth.currentAuthenticatedUser()
+      setSignedInUser(true)
+    } catch (err) {
+      
+    }
+  }
+
   return (
-    <nav className="navbar">
+    <nav className="flex justify-center pt-3 pb-3 space-x-4 border-b bg-cyan-500 border-gra-300">
+      {[
+        ["Home", "/"],
+        ["Create Order", "/create-order"],
+        ["My Orders", "/my-orders"],
+        ["All Orders", "/all-orders"],
+        ["Admin", "/admin"],
+        ["About", "/about"],
+      ].map(([title, url], index) => (
+        <NavLink to={url} key={index}>
+          <a className='rounded-lg px-3 py-2 text-medium hover:bg-slate-100 hover:text-slate-900'>
+            {" "}
+          {title}
+          </a>
+        </NavLink>
+      ))}
       {/* <h1>ACME</h1> */}
-      <div clasname="linke">
+      {/* <div clasname="linke">
           <span className="navButton" id="middleNav">
             <NavLink
               to="/"
@@ -249,7 +286,7 @@ const Navbar = () => {
               Admin
             </NavLink>
           </span>
-      </div>
+      </div> */}
     </nav>
    );
 }
