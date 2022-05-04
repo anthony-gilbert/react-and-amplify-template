@@ -1,23 +1,23 @@
 import React from "react";
 import { Switch, Route, Redirect, useEffect } from "react-router";
-
-
 import Home from "./Home";
-import Nav from "./components/Nav";
-import Admin from './Admin'
-
-
-import login from './login'
-// Signup(Public level view)
-import Signup from './Signup'
-// Logout(Logged in as user, level view)
-import Logout from './Logout'
-// MyOrders(Logged in as user, level view)
-import MyOrders from './MyOrders'
-// AllOrders(Admin level view)
-import AllOrders from './AllOrders'
-// import CreateOrder from './CreateOrder'
 import CreateOrder from './CreateOrder'
+import Admin from './Admin'
+import Login from './login'
+import Nav from "./components/Nav";
+import Signup from './Signup'
+import Logout from './Logout'
+import MyOrders from './MyOrders'
+// import AllOrders from './AllOrders'
+
+
+
+
+// Signup(Public level view)
+// Logout(Logged in as user, level view)
+// MyOrders(Logged in as user, level view)
+// AllOrders(Admin level view)
+// import CreateOrder from './CreateOrder'
 // import "./styles.css";
 
 export default function App() {
@@ -45,7 +45,7 @@ export default function App() {
             exact
             path="/login"
             render={() => {
-              return <login />;
+              return <Login />;
             }}
           />
 
@@ -54,6 +54,22 @@ export default function App() {
             path="/create-order"
             render={() => {
               return <CreateOrder />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/signup"
+            render={() => {
+              return <Signup />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/my-orders"
+            render={() => {
+              return <MyOrders />;
             }}
           />
 
