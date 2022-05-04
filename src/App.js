@@ -9,14 +9,6 @@ import Signup from './Signup'
 import Logout from './Logout'
 import MyOrders from './MyOrders'
 // import AllOrders from './AllOrders'
-
-
-
-
-// Signup(Public level view)
-// Logout(Logged in as user, level view)
-// MyOrders(Logged in as user, level view)
-// AllOrders(Admin level view)
 // import CreateOrder from './CreateOrder'
 // import "./styles.css";
 
