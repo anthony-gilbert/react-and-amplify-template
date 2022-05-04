@@ -9,9 +9,11 @@
 - [x] Remove Next.js so It's just React.js
 - [x] Add Jest Testing Library
 - [x] Add a ESLint
-- [x] Create App with React.js
+- [ ] Create App with React.js
     - [x] Create a Navbar
-	- [x] Create a form for adding data(like adding a product/order)
+	- [ ] Create a form for adding data(like adding a product/order)
+        - [x] Create basic form UI
+        - [ ] Add form functionality(push data to DynamoDB)
     - [x] Create a landing page(x2)
     - [x] Create an Admin page
     - [x] Move the order data to the Admin Page
