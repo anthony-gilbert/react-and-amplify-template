@@ -3,10 +3,9 @@ import { useEffect, useState } from "react";
 // import useFetch from "./useFetch";
 
 const Login = () => {
-//   const { error, isPending, data: blogs } = useFetch('http://localhost:8000/blogs')
 
   return (
-    <div className="create-order justify-center content-center pl-6 flex flex-row min-h-screen justify-center items-center">
+    <div className="justify-center pl-6 flex flex-row min-h-screen justify-center pt-20">
       
       <div className="w-full max-w-xs">
         <h1 className="text-3xl pl-12 pb-1 underline text-blue-600">Order a Product</h1>
@@ -28,12 +27,10 @@ const Login = () => {
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
               Add Product
             </button>
-            {/* <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
-              Forgot Password?
-            </a> */}
           </div>
         </form>
       </div>
+            
     </div>
   );
 }

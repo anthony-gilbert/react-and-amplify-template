@@ -3,7 +3,8 @@ import { NavLink, Link, withRouter } from "react-router-dom";
 import '../configureAmplify'
 import { useState, useEffect } from 'react'
 import { Auth, Hub } from 'aws-amplify'
-
+// import { AmplifySignOut } from "@aws-amplify/ui-react";
+// import { withAuthenticator, AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 
 const Nav = () => {
   
@@ -34,6 +35,7 @@ const Nav = () => {
     <nav className="flex justify-center pt-3 pb-3 space-x-4 border-b mt-10 ml-6 pb-10">
       {[
         ["Home", "/"],
+        ["About Us", "/about-us"]
         // ["Create Order", "/create-order"],
         // ["Admin", "/admin"],
         // ["Login", "/login"],
@@ -41,26 +43,38 @@ const Nav = () => {
         // ["All Orders", "/all-orders"],
         // ["My Orders", "/my-orders"]
       ].map(([product, url], index) => (
+        <>
           <NavLink to={url} key={index}>
             <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{product}</a>
           </NavLink>
+
+          {/* <NavLink to={url} key={index}>
+            <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">{product}</a>
+          </NavLink> */}
+        </>
         ))
       }
       {
         signedInUser && (
-          
           <>
             <NavLink to='/create-order'>
               <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Create Order</a>
               </NavLink>
 
-              <NavLink to='/my-orders'>
-            <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">My Orders</a>
+            <NavLink to='/my-orders'>
+              <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">My Orders</a>
             </NavLink>
             
               <NavLink to='/admin'>
                 <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Admin / All Orders</a>
               </NavLink>
+
+              {/* <AmplifyAuthenticator>
+    <div>
+      <AmplifySignOut />
+    </div>
+  </AmplifyAuthenticator> */}
+              
           </>
         )
       }

@@ -48,9 +48,7 @@ const App = () => {
 
   return (
     <div style={styles.container}>
-      
-      <h1 className={"text-sky-400 text-6xl pb-3  underline pb-3"}>All  Orders</h1>
-      <h5 className={"text-gray-400 text-1xl"}>(only visible to me)</h5>
+      <h1 className="text-sky-400 text-6xl pb-3  underline pb-3">Welcome!<span>🙂</span></h1>
       {/* <input
         onChange={event => setInput('name', event.target.value)}
         style={styles.input}
@@ -64,32 +62,6 @@ const App = () => {
         placeholder="Description"
       />
       <button style={styles.button} onClick={addOrder}>Create Order</button> */}
-      
-      <thead>
-        <tr>
-          <th className="px-4 py-2">Product</th>
-          <th className="px-4 py-2">Description</th>
-          <th className="px-4 py-2">Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          orders.map((order, index) => (
-            <>
-              <tr key={index} style={styles.order}>
-                <td className="border px-4 py-2">{order.product}</td>
-                <td className="border px-4 py-2">{order.description}</td>
-                <td className="border px-4 py-2">{order.price}</td>
-              </tr>
-            {/* <tr className="bg-gray-100">
-                <td className="border px-4 py-2">A Long and Winding Tour of the History of UI Frameworks and Tools and the Impact on Design</td>
-                <td className="border px-4 py-2">Adam</td>
-                <td className="border px-4 py-2">112</td>
-              </tr> */}
-            </>
-          ))
-        }
-      </tbody>                
     </div>
   )
 }
