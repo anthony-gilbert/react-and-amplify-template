@@ -1,54 +1,90 @@
-// import { useState, useEffect } from 'react';
-// import BlogList from './components/OrderList'
+/* src/App.js */
+import React, { useEffect, useState } from 'react'
+import Amplify, { API, graphqlOperation } from 'aws-amplify'
+import { createOrder } from './graphql/mutations'
+import { listOrders } from './graphql/queries'
 
-// const Home = () => {
-//   const [orders, setOrders] = useState([
-//     { productId: 456, product: 'item1', description: 'description....', price: 199.99, customerId: 1},
-//     { productId: 567, product: 'item2', description: 'description....', price: 199.99, customerId: 2},
-//     { productId: 789, product: 'item3', description: 'description....', price: 199.99, customerId: 3}
-//   ])
+import awsExports from "./aws-exports";
+Amplify.configure(awsExports);
 
-//   const [product, setProduct] = useState('PS5')
+const initialState = { name: '', description: '' }
 
-//   const handleDelete = (productId) => {
-//     const newOrders = orders.filter(order => order.productId !== productId );
-//     setOrders(newOrders)
-//   }
+const App = () => {
+  const [formState, setFormState] = useState(initialState)
+  const [orders, setOrders] = useState([])
 
-//   useEffect((orders) => {
-//     console.log('use effect ran');
-//     console.log(orders);
-//   }, [product])
+  useEffect(() => {
+    fetchOrders()
+  }, [])
 
-//   return (
-//       <div clasname="home">
-//         <h1 className="text-3xl font-bold underline">Home Page </h1>
-//         <BlogList orders={orders} title="All Orders" handleDelete={handleDelete}/>
-//         <hr />
-//         {/* <BlogList orders={orders.filter((order)=> order.customerId == 2)} title="My Orders"/> */}
-//         <button onClick={() => setProduct('idk')}>change name</button>
-//         <p>{product}</p>
-//       </div>   
-//     );
-//   }
-   
-//   export default Home;
+  function setInput(key, value) {
+    setFormState({ ...formState, [key]: value })
+  }
 
+  async function fetchOrders() {
+    try {
+      const orderData = await API.graphql(graphqlOperation(listOrders))
+      console.log('orderData: ', orderData);
+      const orders = orderData.data.listOrders.items
+      setOrders(orders)
+    }
+    catch (err) {
+      console.log('error fetching orders: ', err.errors)
+        console.log('error fetching orders: ', err.errors[0].message)
+    }
+  }
 
-import React from "react";
-import { withRouter } from "react-router";
+  async function addOrder() {
+    try {
+      if (!formState.name || !formState.description) return
+      const order = { ...formState }
+      setOrders([...orders, order])
+      setFormState(initialState)
+      await API.graphql(graphqlOperation(createOrder, {input: order}))
+    } catch (err) {
+      console.log('error creating order:', err)
+    }
+  }
 
-
-const Home = () => {
   return (
-    <div
-      id="home">
-      <div id="homeContent">
-        <div className="page-title">Home Page</div>
-        <h3> Welcome! </h3>
-      </div>
+    <div style={styles.container}>
+      <h2>All Orders</h2>
+      {/* <input
+        onChange={event => setInput('name', event.target.value)}
+        style={styles.input}
+        value={formState.name}
+        placeholder="Name"
+      />
+      <input
+        onChange={event => setInput('description', event.target.value)}
+        style={styles.input}
+        value={formState.description}
+        placeholder="Description"
+      />
+      <button style={styles.button} onClick={addOrder}>Create Order</button> */}
+      <>
+        {
+          orders.map((order, index) => (
+            <div key={index} style={styles.order}>
+              <p style={styles.orderProduct}>Product Name: {order.product}</p>
+              <p style={styles.orderProduct}>Description: {order.description}</p>
+              <p style={styles.orderProduct}>Price: {order.price}</p>
+              {/* <img src={order.coverImage} alt="" height="100" width="100" /> */}
+            </div>
+          ))
+        }
+      </>
     </div>
-  );
-};
+  )
+}
 
-export default withRouter(Home);
+const styles = {
+  container: { width: 400, margin: '0 auto', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 20 },
+  order: {  marginBottom: 15 },
+  input: { border: 'none', backgroundColor: '#ddd', marginBottom: 10, padding: 8, fontSize: 18 },
+  todoName: { fontSize: 20, fontWeight: 'bold' },
+  todoDescription: { marginBottom: 0 },
+  button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
+}
+
+export default App
