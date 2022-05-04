@@ -8,6 +8,7 @@ import Nav from "./components/Nav";
 import Signup from './Signup'
 import Logout from './Logout'
 import MyOrders from './MyOrders'
+import AboutUs from "./AboutUs";
 // import AllOrders from './AllOrders'
 // import CreateOrder from './CreateOrder'
 // import "./styles.css";
@@ -62,6 +63,14 @@ export default function App() {
             path="/my-orders"
             render={() => {
               return <MyOrders />;
+            }}
+          />
+
+          <Route
+            exact
+            path="/about-us"
+            render={() => {
+              return <AboutUs />;
             }}
           />
 

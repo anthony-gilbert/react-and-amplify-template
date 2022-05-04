@@ -10,9 +10,10 @@
 - [ ] Create App with React.js
     - [x] Create a Navbar
 	- [x] Create a form for adding data(like adding a product/order)
-    - [x] Create a landing page
+    - [x] Create a landing page(x2)
     - [x] Create an Admin page
-    - [ ] Move the order data to the Admin Page
+    - [x] Move the order data to the Admin Page
+    - [x] Remove Data from the Home/Landing Page to the Admin page
 - [ ] Add Cognito Auth(with Google, Facebook, Twitter, and Email)
 - [ ] Add Jest Testing Library
 - [ ] Add a ESLint
