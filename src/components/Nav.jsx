@@ -44,6 +44,36 @@ const Nav = () => {
         </NavLink>
       </span>
 
+      <span className="border-solid border-2 ml-3 border-sky-500 rounded-lg px-3 py-2 text-medium hover:bg-slate-100 hover:text-slate-900" id="startNav">
+        <NavLink
+          to="/signup"
+          activeClassName="selected"
+          activeStyle={{ textDecoration: "none" }}
+          data-dd-action-name="user-action-nav-link">
+          Signup
+        </NavLink>
+      </span>
+
+      
+      <span className="border-solid border-2 ml-3 border-sky-500 rounded-lg px-3 py-2 text-medium hover:bg-slate-100 hover:text-slate-900" id="startNav">
+        <NavLink
+          to="/"
+          activeClassName="selected"
+          activeStyle={{ textDecoration: "none" }}
+          data-dd-action-name="user-action-nav-link">
+          Logout
+        </NavLink>
+      </span>
+
+      <span className="border-solid border-2 ml-3 border-sky-500 rounded-lg px-3 py-2 text-medium hover:bg-slate-100 hover:text-slate-900" id="startNav">
+        <NavLink
+          to="/my-orders"
+          activeClassName="selected"
+          activeStyle={{ textDecoration: "none" }}
+          data-dd-action-name="user-action-nav-link">
+          My Orders
+        </NavLink>
+      </span>
       
     </div>
   );
