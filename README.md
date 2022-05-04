@@ -8,10 +8,11 @@
     - [x] Push API to AWS
 - [x] Remove Next.js so It's just React.js
 - [ ] Create App with React.js
-    - [ ] Create a Navbar
-	- [ ] Create a form for adding data(like adding a product/order)
-    - [ ] Create a landing page
-    - [ ] Create an Admin page
+    - [x] Create a Navbar
+	- [x] Create a form for adding data(like adding a product/order)
+    - [x] Create a landing page
+    - [x] Create an Admin page
+    - [ ] Move the order data to the Admin Page
 - [ ] Add Cognito Auth(with Google, Facebook, Twitter, and Email)
 - [ ] Add Jest Testing Library
 - [ ] Add a ESLint
