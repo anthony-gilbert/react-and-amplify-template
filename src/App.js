@@ -7,7 +7,7 @@ import Nav from "./components/Nav";
 import Admin from './Admin'
 
 
-import login from './login'
+import Login from './login'
 // Signup(Public level view)
 import Signup from './Signup'
 // Logout(Logged in as user, level view)
@@ -45,7 +45,7 @@ export default function App() {
             exact
             path="/login"
             render={() => {
-              return <login />;
+              return <Login />;
             }}
           />
 
