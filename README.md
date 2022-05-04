@@ -7,18 +7,21 @@
     - [x] Create Custom schema
     - [x] Push API to AWS
 - [x] Remove Next.js so It's just React.js
-- [ ] Create App with React.js
+- [x] Add Jest Testing Library
+- [x] Add a ESLint
+- [x] Create App with React.js
     - [x] Create a Navbar
 	- [x] Create a form for adding data(like adding a product/order)
     - [x] Create a landing page(x2)
     - [x] Create an Admin page
     - [x] Move the order data to the Admin Page
     - [x] Remove Data from the Home/Landing Page to the Admin page
-- [ ] Add Cognito Auth(with Google, Facebook, Twitter, and Email)
-- [ ] Add Jest Testing Library
-- [ ] Add a ESLint
-    - [ ] Enable SES for verifying the Email
----
+- [ ] Add Cognito Auth
+    - [ ] Add Email auth
+        - [ ] Enable SES for verifying the Email
+    - [ ] Add Google auth
+    - [ ] Add Twitter auth
+    - [ ] Add Facebook auth
 - [ ] Add a POST and GET lambda function that connects to the DB
 ---
 # Documentation:
