@@ -20,7 +20,7 @@
     - [x] Remove Data from the Home/Landing Page to the Admin page
 - [ ] Add Cognito Auth
     - [ ] Add Email auth
-        - [ ] Enable SES for verifying the Email
+        - [ ] Enable SES for verifying the Email instead of verifying via the Cognito Console
     - [ ] Add Apple auth
     - [ ] Add Google auth
     - [ ] Add Facebook auth

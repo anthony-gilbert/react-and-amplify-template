@@ -4,7 +4,7 @@ const AboutUs = () => {
 
   return (
     <div style={styles.container}>
-      <h1 className="text-sky-400 text-6xl pb-3  underline pb-3">About Us...</h1>
+      <h1 className="text-sky-400 text-5xl pb-3 text-center underline pb-3">About Us</h1>
     </div>
   )
 }
