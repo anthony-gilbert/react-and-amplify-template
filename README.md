@@ -21,8 +21,8 @@
 - [ ] Add Cognito Auth
     - [ ] Add Email auth
         - [ ] Enable SES for verifying the Email
+    - [ ] Add Apple auth
     - [ ] Add Google auth
-    - [ ] Add Twitter auth
     - [ ] Add Facebook auth
 - [ ] Add a POST and GET lambda function that connects to the DB
 ---

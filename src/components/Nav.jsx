@@ -3,8 +3,8 @@ import { NavLink, Link, withRouter } from "react-router-dom";
 import '../configureAmplify'
 import { useState, useEffect } from 'react'
 import { Auth, Hub } from 'aws-amplify'
-// import { AmplifySignOut } from "@aws-amplify/ui-react";
-// import { withAuthenticator, AmplifyAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
+// import { Authenticator } from '@aws-amplify/ui-react';
+
 
 const Nav = () => {
   
