@@ -4,7 +4,12 @@ import '../configureAmplify'
 import { useState, useEffect } from 'react'
 import { Auth, Hub } from 'aws-amplify'
 // import { Authenticator } from '@aws-amplify/ui-react';
+import { Amplify } from 'aws-amplify';
 
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css'; // default theme
+import awsExports from '../aws-exports';
+Amplify.configure(awsExports);
 
 const Nav = () => {
   
@@ -57,24 +62,22 @@ const Nav = () => {
       {
         signedInUser && (
           <>
-            <NavLink to='/create-order'>
-              <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Create Order</a>
-              </NavLink>
-
-            <NavLink to='/my-orders'>
-              <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">My Orders</a>
-            </NavLink>
-            
-              <NavLink to='/admin'>
-                <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Admin / All Orders</a>
-              </NavLink>
-
-              {/* <AmplifyAuthenticator>
-    <div>
-      <AmplifySignOut />
-    </div>
-  </AmplifyAuthenticator> */}
-              
+            <Authenticator>
+            {({ signOut, user }) => (
+              <>
+                {/* <p>Hello {user.username}</p> */}
+              <NavLink to='/create-order'>
+                  <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Create Order</a>
+                </NavLink><NavLink to='/my-orders'>
+                    <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">My Orders</a>
+                  </NavLink><NavLink to='/admin'>
+                    <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Admin / All Orders</a>
+                  </NavLink><div className="">
+                    <button className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" onClick={signOut}>Sign out</button>
+                  </div>
+                  </>
+            )}
+            </Authenticator>
           </>
         )
       }

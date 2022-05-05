@@ -6,17 +6,15 @@ import Admin from './Admin'
 import Login from './login'
 import Nav from "./components/Nav";
 import Signup from './Signup'
-import Logout from './Logout'
 import MyOrders from './MyOrders'
 import AboutUs from "./AboutUs";
 // import AllOrders from './AllOrders'
-// import CreateOrder from './CreateOrder'
+
 // import "./styles.css";
 import { Amplify } from 'aws-amplify';
 
 import { Authenticator } from '@aws-amplify/ui-react';
 import { withAuthenticator } from '@aws-amplify/ui-react';
-import awsexports from './aws-exports';
 import '@aws-amplify/ui-react/styles.css'; // default theme
 
 import awsExports from './aws-exports';
@@ -28,7 +26,7 @@ function App() {
       {({ signOut, user }) => (
         <main>
           <div className="App">
-      <Nav />
+      <Nav loginStatus={signOut} />
       <Switch>
 
         {/* Home Page */}
@@ -90,8 +88,8 @@ function App() {
         <Redirect to="/" />
       </Switch>
     </div>
-          <h1>Hello {user.username}</h1>
-          <button onClick={signOut}>Sign out</button>
+
+          {/* <button onClick={signOut}>Sign out</button> */}
         </main>
       )}
     </Authenticator>
