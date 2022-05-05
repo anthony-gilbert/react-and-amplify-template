@@ -66,16 +66,17 @@ const Nav = () => {
             {({ signOut, user }) => (
               <>
                 {/* <p>Hello {user.username}</p> */}
-              <NavLink to='/create-order'>
+                <NavLink to='/create-order'>
                   <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Create Order</a>
                 </NavLink><NavLink to='/my-orders'>
-                    <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">My Orders</a>
-                  </NavLink><NavLink to='/admin'>
-                    <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Admin / All Orders</a>
-                  </NavLink><div className="">
-                    <button className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" onClick={signOut}>Sign out</button>
-                  </div>
-                  </>
+                  <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">My Orders</a>
+                </NavLink><NavLink to='/admin'>
+                  <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900">Admin / All Orders</a>
+                </NavLink>
+                <div className="">
+                  <a className="order-solid border-2  ml-3 border-sky-500 rounded-lg px-3 py-2 text-slate-700 font-medium hover:bg-slate-100 hover:text-slate-900" onClick={signOut}>Sign out</a>
+                </div>
+              </>
             )}
             </Authenticator>
           </>
